@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="asset/css/home-responsive.css">
     <link rel="icon" type="image/x-icon" href="./image/favicon.svg">
     <script src="https://kit.fontawesome.com/05c782a462.js" crossorigin="anonymous"></script>
-    
+
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                         </li>
                         <li class="header-middle-right-item open" onclick="openCart()">
                             <div class="cart-icon-menu">
-                                <i class="fa-solid fa-basket-shopping"> </i>
+                                <i class="fa-solid fa-cart-shopping"> </i>
                                 <span class="count-product-cart">0</span>
                             </div>
 
@@ -72,7 +72,7 @@
                 <li class="menu-list-item"><a href="" class="menu-link" onclick="showSection('home')">Trang chủ</a></li>
                 <li class="menu-list-item"><a href="javascript:;" class="menu-link" onclick="toggleMenu()">Sản phẩm</a>
                 </li>
-                <li class="menu-list-item"><a href="javascript:;" class="menu-link">Tin Tức</a></li>
+                <li class="menu-list-item"><a href="javascript:;" class="menu-link" onclick="showSection('news')">Tin Tức</a></li>
                 <li class="menu-list-item"><a href="javascript:;" class="menu-link" onclick="showSection('about')">Giới
                         Thiệu</a></li>
                 <li class="menu-list-item"><a href="javascript:;" class="menu-link"
@@ -95,6 +95,7 @@
                     <li class="category-menu-item"><a href="javascript:;" onclick="filterProducts('Hoodie')">Hoodie</a>
                     </li>
                     <li class="category-menu-item"><a href="javascript:;" onclick="filterProducts('Accessory')">Phụ
+                            <!--Bo phan chon size cho phu kien-->
                             Kiện</a></li>
                     <li class="category-menu-item"><a href="javascript:;" onclick="showAllProducts()">Tất cả</a>
                     </li>
@@ -106,8 +107,7 @@
         </div>
     </nav>
     <!-------------------------------Main----------------------------------->
-    <main>
-
+    <main class="main-wrapper">
         <section id="home" class="content-section hidden">
             <div id="slideshow-wrapper">
                 <div class="slideshow-container">
@@ -152,11 +152,16 @@
         </section>
 
 
-        
-        
-        
 
-        <section id="products" class="content-section">
+        <section id="about" class="content-section">
+            <h1>Giới thiệu</h1>
+            <p>Khám phá các danh mục sản phẩm nổi bật:</p>
+            <ul>
+                <li><a href="javascript:;" onclick="showSection('home')">Áo Khoác</a></li>
+        </section>
+
+
+        <!--- <section id="products" class="content-section">
             <div class="container1">
                 <div class="tieude" id="tieude">
                     <h2>Sản phẩm</h2>
@@ -164,11 +169,87 @@
                 <div class="listProduct"></div>
                 <div class="pagination-controls"></div>
             </div>
-        </section>
+        </section> -->
 
 
 
-
+        <div class="container" id="account-user">
+            <div class="main-account">
+                <div class="main-account-header">
+                    <h3>Thông tin tài khoản của bạn</h3>
+                </div>
+                <div class="main-account-body">
+                    <div class="main-account-body-col">
+                        <form action="" class="info-user">
+                            <div class="form-group">
+                                <label for="infoname" class="form-label">Họ và tên</label>
+                                <input class="form-control" type="text" name="infoname" id="infoname" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="infophone" class="form-label">Số điện thoại</label>
+                                <input class="form-control" type="text" name="infophone" id="infophone" disabled="true"
+                                    placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="infoemail" class="form-label">Email</label>
+                                <input class="form-control" type="email" name="infoemail" id="infoemail"
+                                    placeholder="Thêm địa chỉ email của bạn">
+                                <span class="inforemail-error form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="infoaddress" class="form-label">Địa chỉ</label>
+                                <input class="form-control" type="text" name="infoaddress" id="infoaddress"
+                                    placeholder="Thêm địa chỉ giao hàng của bạn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main-account-body-col">
+                        <form action="" class="change-password">
+                            <div class="form-group">
+                                <label for="" class="form-label w60">Mật khẩu hiện tại</label>
+                                <input class="form-control" type="password" name="" id="password-cur-info"
+                                    placeholder="Nhập mật khẩu hiện tại">
+                                <span class="password-cur-info-error form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label w60">Mật khẩu mới </label>
+                                <input class="form-control" type="password" name="" id="password-after-info"
+                                    placeholder="Nhập mật khẩu mới">
+                                <span class="password-after-info-error form-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="form-label w60">Xác nhận mật khẩu mới</label>
+                                <input class="form-control" type="password" name="" id="password-comfirm-info"
+                                    placeholder="Nhập lại mật khẩu mới">
+                                <span class="password-after-comfirm-error form-message"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="main-account-body-row">
+                        <div>
+                            <button id="save-info-user" onclick="changeInformation()"><i
+                                    class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button>
+                        </div>
+                        <div>
+                            <button id="save-password" onclick="changePassword()"><i class="fa-solid fa-key"></i> Đổi
+                                mật khẩu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="order-history">
+            <div class="main-account">
+                <div class="main-account-header">
+                    <h3>Quản lý đơn hàng của bạn</h3>
+                    <p>Xem chi tiết, trạng thái của những đơn hàng đã đặt.</p>
+                </div>
+                <div class="main-account-body">
+                    <div class="order-history-section">
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
@@ -246,7 +327,7 @@
 
                     <div class="product-detail-buttons">
                         <button onclick="addToCartFromDetail()">Thêm vào giỏ hàng</button>
-                        <button  class="buyNow">Mua ngay</button>
+                        <button class="buyNow">Mua ngay</button>
                     </div>
                 </div>
             </div>
