@@ -8,7 +8,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     transition: all 0.3s ease;
-    /* Thêm hiệu ứng chuyển đổi cho trang */
+
 }
 
 :root {
@@ -77,7 +77,7 @@ header {
 }
 
 .container {
-    max-width: 1600px;
+    max-width: 1400px;
     padding: 0 10px;
     margin: 0 auto;
 }
@@ -492,6 +492,130 @@ header {
     border-top: 1px solid #eee;
 }
 
+/*------------------------Main---------------------------*/
+.main-wrapper {
+    overflow: hidden;
+    padding-top: 60px
+}
+
+#home.hide {
+    display: none;
+}
+
+#order-history {
+    display: none !important;
+}
+
+#account-user.open {
+    display: flex !important;
+}
+
+#account-user {
+    display: none !important;
+}
+
+#order-history.open {
+    display: flex !important;
+    justify-content: center;
+}
+/* Trang thong tin tai khoan */
+#account-user {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.sidebar-account {
+    width: 20%;
+    margin-right: 40px;
+}
+
+.menu-account {
+    border: 1px solid #dae2e6;
+}
+
+.menu-account-item {
+    padding: 10px 15px;
+    color: var(--text-color);
+    display: block;
+    height: 100%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu-account-item:hover,
+.menu-account-item.active {
+    background-color: #eee;
+}
+
+.menu-account-item:not(last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+.menu-account-item i {
+    margin-right: 5px;
+}
+
+.main-account {
+    width: 80%;
+    border: 1px solid #dae2e6;
+    padding: 20px;
+}
+
+.main-account.active {
+    display: block;
+}
+
+
+.main-account-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-account-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-account-body-row {
+    width: 100%;
+    display: flex;
+}
+
+.main-account-body-row>div {
+    width: 50%;
+}
+
+
+.main-account-body-col {
+    padding-top: 10px;
+    width: 50%;
+}
+
+.main-account-body-col .form-group {
+    margin-right: 30px;
+}
+
+#save-password,
+#save-info-user {
+    border: none;
+    outline: none;
+    color: white;
+    background-color: var(--red);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#save-password i,
+#save-info-user i {
+    margin-right: 5px;
+}
+
+input[type=number] {
+    --moz-appearance: textfield;
+}
+
 /*-----------------slideshow-------------------------*/
 /* Wrapper for the slideshow */
 #slideshow-wrapper {
@@ -900,7 +1024,7 @@ header {
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(2);
     }
 
     100% {
